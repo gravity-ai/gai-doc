@@ -1,2 +1,2 @@
 # gai-doc
-Documentation Site
+This repo is intended to keep track of documentation for gravity-ai products
