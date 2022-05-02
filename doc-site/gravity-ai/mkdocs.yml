@@ -9,6 +9,7 @@ nav:
       - Integrating Production Containers: using-containers.md
       - License Keys: license-keys.md
       - Mapping File Format: mapping-file.md
+      - Sharing Data Amongst Containers: sharing-data.md
   - Creating a New Project:
       - Getting Started: create-project.md
       - Build Configuration File: build-config.md

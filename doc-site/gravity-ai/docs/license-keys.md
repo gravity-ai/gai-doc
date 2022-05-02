@@ -12,7 +12,7 @@ During development, you might need a "developer license key" in order to test yo
 
 ## Sharing license keys for the same image
 
- Say if you were running several containers, running the same image.  You can share data (including license keys) amongst those containers (again, assuming they're the exact same image).  
+ Say if you were running several containers, running the same image; you can share data (including license keys) amongst those containers (again, assuming they're the exact same image).  
 
  See here for more information
  - [Sharing Data](/sharing-data)
