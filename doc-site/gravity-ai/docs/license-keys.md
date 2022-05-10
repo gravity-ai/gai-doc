@@ -8,7 +8,7 @@ License keys are required to access gravity ai containers. Keys expire on a regu
 
 During development, you might need a "developer license key" in order to test your model. You can easily download once your project has finished building.
 
-![Alt Text](./img/dev_license_btn.png)
+![Downloading a dev license key](./img/dev_license_btn.png)
 
 ## Sharing license keys for the same image
 
