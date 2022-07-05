@@ -19,6 +19,7 @@ nav:
   - Tutorials: tutorials.md
 plugins:
   - macros
+  - mkdocs-video
 extra:
   supported:
     debian:
