@@ -73,3 +73,101 @@ Each Test object has the following fields:
 
 - `RelativeReferencePath` - A test string path to look at in the archive, relative to the directory location of this configuration file. The path should point to the expected output that your algorithm will product, given the above input file. The results of your algorithm are compared against this file (a <i>byte-wise comparison</i>). If the result is identicle to this file, the test passes. Otherwise the build fails. This filed may be set to null or omitted altogether. This results in the output being verified that it exists, but it is not compared against a file.
   <i>Note that the byte-wise comparison can fail due to character encoding and line-ending difference between linux and the operative system you produce the original file on.</i>
+
+## Example 2 File
+
+The following example uses the gravityAI library and the Schema item to automatically populate the settings during the container upload process.
+
+```
+{
+  "UseGaiLib": true,
+  "Tests": [
+    {
+      "RelativeInputPath": "test_data.csv",
+      "RelativeReferencePath": "test_reference.csv"
+    }
+  ],
+  "Schema": {
+    "InputType": "csv_header",
+    "OutputType": "csv_header",
+    "Input": [
+      {
+        "DataType": "Number",
+        "Optional": false, 
+        "Path": "x"
+      },
+      {
+        "DataType": "Number",
+        "Optional": false,
+        "Path": "y"
+      }
+    ],
+    "Output": [
+      {
+        "DataType": "Number",
+        "Optional": false,
+        "Path": "x"
+      },
+      {
+        "DataType": "Number",
+        "Optional": false,
+        "Path": "y"
+      },
+      {
+        "DataType": "Number",
+        "Optional": false,
+        "Path": "z"
+      }
+    ]
+  }
+}
+```
+
+## UseGaiLib Field
+
+Set this to true if you are using the gravityAI library. This is currently only available for python found <a href="https://pypi.org/project/gravityai/" target="_blank">here</a>.
+
+```
+"UseGaiLib": true
+```
+
+## Schema Field
+
+<b>Schema</b> is an optional object that defines the input and output file types as well as their schema:
+
+```
+"Schema": {
+    "InputType": "<mimetype>",
+    "OutputType": "<mimetype>",
+    "InputSchema": [
+      {
+        "DataType": "<datatype>",
+        "Optional": false, 
+        "Path": "<schemapath>"
+      },
+    ],
+    "OutputSchema": [
+      {
+        "DataType": "<datatype>",
+        "Optional": false, 
+        "Path": "<schemapath>"
+      },
+    ]
+}
+```
+
+Each Test object has the following fields:
+
+- `InputType & OutputType` - "&lt;mimetype&gt;" is a text string corresponding to an item in the mimetype enummerated list in the container api, to indicate the type of file.  This value can be one of types:
+> - "json" - For use with a JavaScript Object Notation file.
+> - "csv" - For use with a Comma Separated Value file.
+> - "csv_header" - For use with a Comma Separated Value file with Headers.
+
+- `InputSchema & OutputSchema` - An list which contains schema setting objects that will auto-populate the container upload form.  The object must contain the following:
+> - `DataType` - "&lt;datatype&gt;" is a text string corresponding to an item in the datatype enummerated list in the container api, to indicate the type of data the path represents.  This value can be one of types:
+>> - "string"
+>> - "number"
+>> - "date"
+>> - "boolean"
+> - `Optional` - A boolean value to indicate whether the path is optional.
+> - `Path` - A schema path as defined in [Schema Paths](/schema-paths/).
