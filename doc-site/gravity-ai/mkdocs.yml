@@ -13,6 +13,7 @@ nav:
       - Container API: container-api.md
   - Creating a New Project:
       - Getting Started: create-project.md
+      - Handling Input and Output: input-output.md
       - Build Configuration File: build-config.md
       - Structured Data Schema: schema-paths.md
       - Uploading an R Project: upload-r-project.md
@@ -36,3 +37,16 @@ theme:
   custom_dir: overrides/
 markdown_extensions:
   - tables
+  - pymdownx.highlight
+  - codehilite:
+      guess_lang: true
+      linenums: true
+  - pymdownx.highlight:
+      auto_title: true
+      anchor_linenums: true
+      use_pygments: true
+      linenums: true
+      linenums_style: pymdownx-inline
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
