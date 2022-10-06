@@ -1,6 +1,6 @@
 # Mapping File Format
 
-When submitting structured dataa to the container, an optional mapping file may be supplied to map data paths between the input data schema, and the container's schema. Mapping files can be created in the marketplace by testing a dataset against a model. The mapping file for the test can be downloaded from the test results page. It can also be created manually.
+When submitting structured data to the container, an optional mapping file may be supplied to map data paths between the input data schema, and the container's schema. Mapping files can be created in the marketplace by testing a dataset against a model. The mapping file for the test can be downloaded from the test results page. It can also be created manually.
 
 The schema mapping file is a json format file. It consists of an array of mapping objects.
 

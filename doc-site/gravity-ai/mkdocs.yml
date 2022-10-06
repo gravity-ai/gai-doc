@@ -3,9 +3,21 @@ site_url: https://gravity-ai.com
 site_description: Documentation for Gravity AI
 copyright: "&#169; 2020-2022 Gravity AI"
 nav:
-  - Home: index.md
+  - gravityAI: 
+    - gravityAI: gravityAI.md
+    - Bounty Request Approval Process: bountyRequestApprovalProcess.md
+    - Bounty Fulfillment Process: bountyFulfillmentProcess.md
+    - Model Approval Process: modelApprovalProcess.md
+    - Purchasing a Model: purchasing.md
+  - Build Process: 
+    - Build Configuration: buildProcess.md
+    - Building Models: buildingModels.md
+    - Input Output Handling: inputOutputHandling.md
+    - Schemas: schema.md
+    - Troubleshooting: troubleshootingModels.md
+  - Test Process: 
+    - Build testing: buildTesting.md
   - Using Containers:
-      - Purchasing a Model: purchasing.md
       - Integrating Production Containers: using-containers.md
       - License Keys: license-keys.md
       - Mapping File Format: mapping-file.md
@@ -13,11 +25,8 @@ nav:
       - Container API: container-api.md
   - Creating a New Project:
       - Getting Started: create-project.md
-      - Handling Input and Output: input-output.md
-      - Build Configuration File: build-config.md
-      - Structured Data Schema: schema-paths.md
       - Uploading an R Project: upload-r-project.md
-  - Tutorials: tutorials.md
+      - Tutorials: tutorials.md
 plugins:
   - macros
   - mkdocs-video
