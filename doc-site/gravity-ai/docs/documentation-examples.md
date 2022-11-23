@@ -64,6 +64,7 @@ This customer sentiment analysis model should not be used to automate responses 
 ### Model Architecture <a id="model-architecture"></a>
 
 #### Diagram <a id="model-diagram"></a>
+![Model Diagram Example](./img/model-diagram-example.png)
 
 #### Description <a id="model-diagram-description"></a>
 The architecture overview presents the key elements of the model and data pipeline. There are two loosely-coupled elements - a question answering pre-trained model, and a preceding text extraction and optimisation engine.
