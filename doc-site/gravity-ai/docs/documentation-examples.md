@@ -10,7 +10,7 @@ The model is further trained on a proprietary dataset of financial documents to 
 #### Examples of questions and answers are: <a id="question-answer"></a>
 Q: What is the total invoice value? A: $55,000<br/>
 Q: What is the email of the author? A: john@gravity-futures.com<br/>
-A: When is this document dated? A: January 6th 2018.<br/>
+Q: When is this document dated? A: January 6th 2018.<br/>
 
 The model is not a text classifier.
 
