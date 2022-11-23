@@ -186,10 +186,10 @@ A few minutes
 
 ## Risk & Compliance <a id="risk-compliance"></a>
 
-### Privacy Risks <a id="privacy-risks"></a>
-
-#### Blackbox Model
+### Blackbox Model <a id="blackbox-model"></a>
 This is a blackbox model.
+
+### Privacy Risks <a id="privacy-risks"></a>
 
 #### Training Data
 The model is a general question answering system which returns information from a training database of financial documents from your organisation which can contain personal information, such as names, telephone numbers and addresses.
