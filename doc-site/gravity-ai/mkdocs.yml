@@ -25,6 +25,7 @@ nav:
       - Container API: container-api.md
   - Creating a New Project:
       - Getting Started: create-project.md
+      - Model Documentation: documentation-examples.md
       - Uploading an R Project: upload-r-project.md
       - Tutorials: tutorials.md
 plugins:
