@@ -41,7 +41,7 @@ extra:
     license:
       duration_in_days: 30
   analytics:
-    gtag: UA-145378630-1
+    gtag: G-292832164
 theme: 
   name: readthedocs
   custom_dir: overrides/
