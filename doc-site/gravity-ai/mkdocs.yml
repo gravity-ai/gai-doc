@@ -1,7 +1,7 @@
 site_name: gravity ai
 site_url: https://gravity-ai.com
 site_description: Documentation for Gravity AI
-copyright: "&#169; 2020-2022 Gravity AI"
+copyright: "&#169; 2020-2023 Gravity AI"
 nav:
   - gravityAI: 
     - gravityAI: gravityAI.md
@@ -17,6 +17,9 @@ nav:
     - Troubleshooting: troubleshootingModels.md
   - Test Process: 
     - Build testing: buildTesting.md
+  - Jobs:
+    - Jobs API: jobs-api.md
+    - Submitting On-Demand Jobs: submittingJobs.md
   - Using Containers:
       - Integrating Production Containers: using-containers.md
       - License Keys: license-keys.md
