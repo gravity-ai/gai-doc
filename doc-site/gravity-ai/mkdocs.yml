@@ -5,6 +5,7 @@ copyright: "&#169; 2020-2023 Gravity AI"
 nav:
   - gravityAI: 
     - gravityAI: gravityAI.md
+    - Glossary: glossary.md
     - Bounty Request Approval Process: bountyRequestApprovalProcess.md
     - Bounty Fulfillment Process: bountyFulfillmentProcess.md
     - Model Approval Process: modelApprovalProcess.md
