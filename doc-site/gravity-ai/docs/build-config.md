@@ -9,7 +9,7 @@ Project_to_Upload/
 
 ## Example Build Configuration: gravityai-build.json
 
-The following example installs tesseract and support libraries as "SystemPackages". It also offers an input file along with expected output to use as a test at build time.
+The following example installs tesseract and support libraries as "SystemPackages". This file may contain one to many tests, each of which containing an input file along with expected output to use as a test at build time.
 
 ```
 {

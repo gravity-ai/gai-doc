@@ -35,7 +35,7 @@ Project_to_Upload/
 
 ### Example Build Configuration: gravityai-build.json
 
-The following example installs tesseract and support libraries as "SystemPackages". This file may contain one to many tests, each of which offering an input file along with expected output to use as a test at build time.
+The following example installs tesseract and support libraries as "SystemPackages". This file may contain one to many tests, each of which containing an input file along with expected output to use as a test at build time.
 
 ```
 {
@@ -205,7 +205,7 @@ Each Test object has the following fields:
 - All you need to do is compress (zip/tar/etc) your code.  There's no need to upload/package dependencies.
 - Once you choose your zipped model, just click “Begin Upload” this will upload your model.
 
-    * All you need to do is compress (zip/tar/etc) your code.  You shouldn't upload/package .
+    * All you need to do is compress (zip/tar/etc) your code.  You shouldn't upload/package dependencies.
     * Once you choose your zipped model, just click “Begin Upload” this will upload your model.
         * A progress bar will appear, indicating progress of your upload.
         * NOTE: your model doesn't need to be a .zip — it could be a .tar, a GZip, etc.
