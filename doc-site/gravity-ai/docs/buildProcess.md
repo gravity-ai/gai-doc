@@ -6,7 +6,7 @@
 
 -  What to know prior to creating your project:
 
-    * If your code works locally, it doesn’t necessarily  mean that it will work when it gets put into a docker container.  You must create your project in such a way that it must be able to run on a linux-based container. This is currently a container derived from debian buster-slim, but we might migrate to an ubuntu based container eventually.
+    * If your code works locally, it doesn’t necessarily  mean that it will work when it gets put into a docker container.  You must create your project in such a way that it must be able to run on a linux-based container. If you're using **Python CPU**, this is a container derived from **Debian Buster Slim**, and if you're using **Python GPU**, this is a container derived from **Ubuntu Focal**.
         * When in doubt, feel free to download one of the many free models and use that docker container as your dev environment.  E.g. copy your model code over to the container, install your dependencies, and attempt to run it at the CLI.  Does it work as expected?
     * gravityAI does not (currently) support the M1 chipset that can be found in many MACs nowadays.  If you attempt to run a gravityAI container on such platforms, they will not work.
     * gravityAI prides itself on being a marketplace that consists of high-quality, well documented models. 
@@ -33,6 +33,7 @@ Project_to_Upload/
    |--> gravityai-build.json
 ```
 
+<a id="example-build-config"></a>
 ### Example Build Configuration: gravityai-build.json
 
 The following example installs tesseract and support libraries as "SystemPackages". This file may contain one to many tests, each of which containing a ```RelativeInputPath``` field for an input file as well as a ```RelativeReferencePath``` field for expected output to use as a test at build time.
@@ -67,7 +68,7 @@ The following example installs tesseract and support libraries as "SystemPackage
 
 ### SystemPackages Field
 
-This is an array of string values, each the name of a linux system package. At the moment, these packages should be available on the debian linux distribution. The base container image is debian {{supported.debian.version_name}}, so you may need to include additional packages not normally available on {{supported.debian.version_name}}. Below is an example of how to specify SystemPackages:
+As [displayed above](#example-build-config), this is an array of string values, each the name of a linux system package. At the moment, these packages should be available on the debian linux distribution. The base container image is debian {{supported.debian.version_name}}, so you may need to include additional packages not normally available on {{supported.debian.version_name}}. Below is an example of how to specify SystemPackages:
 
 ```
 "SystemPackages": [
