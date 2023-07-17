@@ -4,4 +4,4 @@ Below are some terms we find helpful to reference throughout your gravityAI expe
 
 ##Archive
 
-An **archive** is the model.zip that a user uploads and can have the .zip, .tar.gz, etc. file formats.
+An **archive** is the model.zip file that a user uploads and can have the .zip, .tar.gz, etc. file formats.
