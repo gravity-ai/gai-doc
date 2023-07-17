@@ -9,7 +9,7 @@ Project_to_Upload/
 
 ## Example Build Configuration: gravityai-build.json
 
-The following example installs tesseract and support libraries as "SystemPackages". This file may contain one to many tests, each of which containing a ```RelativeInputPath``` field for an input file as well as a ```RelativeReferencePath``` field for expected output to use as a test at build time.
+The following example installs tesseract and support libraries as ```SystemPackages```. This file may contain one to many tests, each of which containing a ```RelativeInputPath``` field for an input file as well as a ```RelativeReferencePath``` field for expected output to use as a test at build time.
 
 ```
 {
@@ -74,7 +74,7 @@ Each Test object has the following fields:
 - `RelativeReferencePath` - A test string path to look at in the [archive](./glossary.md#Archive), relative to the directory location of this configuration file. The path should point to the expected output that your algorithm will product, given the above input file. The results of your algorithm are compared against this file (a <i>byte-wise comparison</i>). If the result is identical to this file, the test passes. Otherwise the build fails. This field may be set to null or omitted altogether. This results in the output being verified that it exists, but it is not compared against a file.
   <i>Note that the byte-wise comparison can fail due to character encoding and line-ending difference between linux and the operative system you produce the original file on.</i>
 
-## Example Build Configuration cont.: gravityai-build.json
+## Example Build Configuration Continued: gravityai-build.json
 
 The following example uses the gravityAI library and the Schema item to automatically populate the settings during the container upload process.
 

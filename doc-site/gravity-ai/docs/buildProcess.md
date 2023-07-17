@@ -36,7 +36,7 @@ Project_to_Upload/
 <a id="example-build-config"></a>
 ### Example Build Configuration: gravityai-build.json
 
-The following example installs tesseract and support libraries as "SystemPackages". This file may contain one to many tests, each of which containing a ```RelativeInputPath``` field for an input file as well as a ```RelativeReferencePath``` field for expected output to use as a test at build time.
+The following example installs tesseract and support libraries as ```SystemPackages```. This file may contain one to many tests, each of which containing a ```RelativeInputPath``` field for an input file as well as a ```RelativeReferencePath``` field for expected output to use as a test at build time.
 
 ```
 {
@@ -68,7 +68,7 @@ The following example installs tesseract and support libraries as "SystemPackage
 
 ### SystemPackages Field
 
-As [displayed above](#example-build-config), this is an array of string values, each the name of a linux system package. At the moment, these packages should be available on the debian linux distribution. The base container image is debian {{supported.debian.version_name}}, so you may need to include additional packages not normally available on {{supported.debian.version_name}}. Below is an example of how to specify SystemPackages:
+As [displayed above](#example-build-config), the ```SystemPackages``` field is an array of string values, each the name of a linux system package. If you're using **Python CPU**, the base container image is **Debian {{supported.debian.version_name}}**, and if you're using **Python GPU**, the base container image is **Ubuntu Focal** so you may need to include additional packages not normally available on {{supported.debian.version_name}} or {{supported.ubuntu.version_name}}. Below is an example of how to specify SystemPackages:
 
 ```
 "SystemPackages": [
@@ -79,7 +79,7 @@ As [displayed above](#example-build-config), this is an array of string values, 
 
 ### Tests Field
 
-<b>Tests</b> is an array of Test Objects:
+<b>Tests</b> is an array of Test Objects, as displayed in the example below:
 
 ```
 "Tests": [
@@ -101,7 +101,7 @@ Each Test object has the following fields:
 - `RelativeReferencePath` - A test string path to look at in the [archive](./glossary.md#Archive), relative to the directory location of this configuration file. The path should point to the expected output that your algorithm will product, given the above input file. The results of your algorithm are compared against this file (a <i>byte-wise comparison</i>). If the result is identical to this file, the test passes. Otherwise the build fails. This field may be set to null or omitted altogether. This results in the output being verified that it exists, but it is not compared against a file.
   <i>Note that the byte-wise comparison can fail due to character encoding and line-ending difference between linux and the operative system you produce the original file on.</i>
 
-### Example Build Configuration cont.: gravityai-build.json
+### Example Build Configuration Continued: gravityai-build.json
 
 The following example uses the gravityAI library and the Schema item to automatically populate the settings during the container upload process.
 
