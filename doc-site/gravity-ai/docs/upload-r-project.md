@@ -36,8 +36,8 @@ For a package called ‘mypackage’ with version 1.2.3 copy the source to the f
 
 Important: Make sure you have authorization to upload any private packages.
 
-More information available here:
-https://rstudio.github.io/renv/articles/local-sources.html
+More information available
+<a href="https://rstudio.github.io/renv/articles/renv.html" target="_blank">here</a>.
 
 ## 2. Zip and upload the project
 

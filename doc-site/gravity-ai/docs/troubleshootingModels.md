@@ -2,7 +2,7 @@
 
 **Q. My model is hanging, what gives?!** <br/>
 
-- This can be the result of numerous things, but likely, your model is likely incorrect.  This can be anything from a spacing problem in a python script, to a dependency problem leading to X not being recognized.  
+- This can be the result of numerous things, but it is most likely that your model is incorrect.  This can be anything from a spacing problem in a python script, to a dependency problem leading to X not being recognized.  
 - The best way to resolve this issue is to log into a debian slim-buster container and attempt to build and run your application there (in the container).  If you see any exceptions generated in the container CLI as you run your application, try to address those problems (and if necessary correct your dependencies) and re-upload/rebuild.
 - You might save yourself a lot of heartache by simply setting up a debian vm and developing your project (initially) there. There’s also nothing to stop you from developing your project from within the debian slim-buster container.    
 

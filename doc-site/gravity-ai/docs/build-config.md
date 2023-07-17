@@ -7,9 +7,9 @@ Project_to_Upload/
    |--> gravityai-build.json
 ```
 
-## Example File
+## Example Build Configuration: gravityai-build.json
 
-The following example installs tesseract as a dependency. It also offers an input file along with expected output to use as a test at build time.
+The following example installs tesseract and support libraries as "SystemPackages". It also offers an input file along with expected output to use as a test at build time.
 
 ```
 {
@@ -41,7 +41,7 @@ The following example installs tesseract as a dependency. It also offers an inpu
 
 ## SystemPackages Field
 
-This is an array of string values, each the name of a linux system package. At the moment, these packages should be available on the debian linux distribution. The base container image is debian {{supported.debian.version_name}}, so you may need to include additional packages not normally available on {{supported.debian.version_name}}.
+This is an array of string values, each the name of a linux system package. At the moment, these packages should be available on the debian linux distribution. The base container image is debian {{supported.debian.version_name}}, so you may need to include additional packages not normally available on {{supported.debian.version_name}}. Below is an example of how to specify SystemPackages:
 
 ```
 "SystemPackages": [
@@ -71,10 +71,10 @@ Each Test object has the following fields:
 
 - `RelativeInputPath` - A text string path to look at in the archive, relative to the directory location of this configuration file. The path should point to a test data input file that your algorithm will accept and run against at build time. If the output produced is structured data, then it is compared against the expected structure added to the build settings (ie. [Schema Paths](/schema-paths/)).
 
-- `RelativeReferencePath` - A test string path to look at in the archive, relative to the directory location of this configuration file. The path should point to the expected output that your algorithm will product, given the above input file. The results of your algorithm are compared against this file (a <i>byte-wise comparison</i>). If the result is identicle to this file, the test passes. Otherwise the build fails. This filed may be set to null or omitted altogether. This results in the output being verified that it exists, but it is not compared against a file.
+- `RelativeReferencePath` - A test string path to look at in the archive, relative to the directory location of this configuration file. The path should point to the expected output that your algorithm will product, given the above input file. The results of your algorithm are compared against this file (a <i>byte-wise comparison</i>). If the result is identical to this file, the test passes. Otherwise the build fails. This field may be set to null or omitted altogether. This results in the output being verified that it exists, but it is not compared against a file.
   <i>Note that the byte-wise comparison can fail due to character encoding and line-ending difference between linux and the operative system you produce the original file on.</i>
 
-## Example 2 File
+## Example Build Configuration cont.: gravityai-build.json
 
 The following example uses the gravityAI library and the Schema item to automatically populate the settings during the container upload process.
 
