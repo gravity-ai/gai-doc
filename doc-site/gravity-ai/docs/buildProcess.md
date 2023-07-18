@@ -8,7 +8,7 @@
 
     * If your code works locally, it doesn’t necessarily  mean that it will work when it gets put into a docker container.  You must create your project in such a way that it must be able to run on a linux-based container. If you're using **Python CPU**, this is a container derived from **Debian Buster Slim**, and if you're using **Python GPU**, this is a container derived from **Ubuntu Focal**.
         * When in doubt, feel free to download one of the many free models and use that docker container as your dev environment.  E.g. copy your model code over to the container, install your dependencies, and attempt to run it at the CLI.  Does it work as expected?
-    * gravityAI does not (currently) support the M1 chipset that can be found in many MACs nowadays.  If you attempt to run a gravityAI container on such platforms, they will not work.
+    * **gravityAI does not (currently) support the M1 and M2 chipsets** that can be found in many MACs nowadays.  If you attempt to run a gravityAI container on such platforms, they will not work.
     * gravityAI prides itself on being a marketplace that consists of high-quality, well documented models. 
         * Coding a working model is, very much, the first step of getting the model approved and listed on the marketplace.  Clearly listing use cases for your model, how/when to use it, what the performance expectations are, how much memory the buyer should allocate to docker memory, etc. can go a long way in helping your model getting approved (also in selling it as well).
     * Please don’t use libraries that have <a href="https://www.gnu.org/licenses/copyleft.en.html" target="_blank">Copy-left Licenses</a>.  Use of these licenses may lead to your model not being approved. 
@@ -20,7 +20,7 @@
     * We recommend following the tutorial created by Youtuber Code With Ania, you can view [here](https://youtu.be/i6qL3NqFjs4).
     * Regardless of how you create your model...
         * you must take care to carefully list your dependencies in a **requirements.txt** file or using **renv**
-        * you must have a single entry script that takes into account, at minimum, a path to an input file and a path to an output file. (see Input/Output Handling)
+        * you must have a single entry script that takes into account, at minimum, a path to an input file and a path to an output file. For more info check out [Input/Output Handling](./input-output.md).
     * You may or may not decide to include a gravityai-build.json to allow for prefilled build settings or tests that can occur during build processing.
 
 

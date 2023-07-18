@@ -6,7 +6,7 @@ Namely:
 
 
 1. Models must be well documented.
-   Note: If you want an example of a well documented model, check out the documentation from <a href="https://www.gravity-ai.com/catalog/product/gpt-turbo" target="_blank">this one</a>.
+   Note: If you want an example of a well documented model, check out the documentation from <a href="https://www.gravity-ai.com/catalog/product/finsent-sentiment" target="_blank">this one</a>.
     
     * What’s the input and output?
     * What are the use cases of your model?
