@@ -13,7 +13,7 @@
         * Coding a working model is, very much, the first step of getting the model approved and listed on the marketplace.  Clearly listing use cases for your model, how/when to use it, what the performance expectations are, how much memory the buyer should allocate to docker memory, etc. can go a long way in helping your model getting approved (also in selling it as well).
     * Please don’t use libraries that have copy-left licenses.  Use of these licenses might lead to your model not being approved. 
     * Handling multi-file input/output is a bit tricky at this time.  While possible, have single file input/output is preferred.
-    * Currently, our supported languages are Python 3.5 - 3.10, Python 2.7 (recommend not using), and R 3.6  
+    * Currently, our supported languages vary depending on whether you're using **Python CPU Only or Python GPU**. If you're using Python CPU Only, we support Python 3.5 - 3.10 and R 3.6, and if you're using Python GPU, we support Python 3.8-3.10.
 
 -  Coding your Hello Universe Project
 
