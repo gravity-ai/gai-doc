@@ -11,13 +11,13 @@
     * gravityAI does not (currently) support the M1 chipset that can be found in many MACs nowadays.  If you attempt to run a gravityAI container on such platforms, they will not work.
     * gravityAI prides itself on being a marketplace that consists of high-quality, well documented models. 
         * Coding a working model is, very much, the first step of getting the model approved and listed on the marketplace.  Clearly listing use cases for your model, how/when to use it, what the performance expectations are, how much memory the buyer should allocate to docker memory, etc. can go a long way in helping your model getting approved (also in selling it as well).
-    * Please don’t use libraries that have [copy-left licenses](./glossary.md#Copy-left Licenses).  Use of these licenses may lead to your model not being approved. 
+    * Please don’t use libraries that have <a href="https://www.gnu.org/licenses/copyleft.en.html" target="_blank">Copy-left Licenses</a>.  Use of these licenses may lead to your model not being approved. 
     * Handling multi-file input/output is a bit tricky at this time.  While possible, have single file input/output is preferred.
     * Currently, our supported languages vary depending on whether you're using **Python CPU Only or Python GPU**. If you're using Python CPU Only, we support Python 3.5 - 3.10 and R 3.6, and if you're using Python GPU, we support Python 3.8-3.10.
 
 -  Coding your Hello Universe Project
 
-    * We recommend following the tutorial created by Youtuber Code With Ania, you can view [here](https://youtu.be/i6qL3NqFjs4)
+    * We recommend following the tutorial created by Youtuber Code With Ania, you can view [here](https://youtu.be/i6qL3NqFjs4).
     * Regardless of how you create your model...
         * you must take care to carefully list your dependencies in a **requirements.txt** file or using **renv**
         * you must have a single entry script that takes into account, at minimum, a path to an input file and a path to an output file. (see Input/Output Handling)

@@ -4,8 +4,8 @@ As an independent seller, you may always submit models in an attempt to fulfill 
 
 They are under no obligation to accept any particular model, for a variety of reasons and they may or may not inform you of said reasons.  
 
-As such, it might be necessary that the models you submit are qualified and competitive.  They must be well documented, performant, accurate, and fulfill whatever needs the Bounty Requestor might have specified. Even in this case, their requirements might change, so it might be worth keeping up-to-date with the bounty request.  
+As such, it may be necessary that the models you submit are qualified and competitive.  They must be well documented, performant, accurate, and fulfill whatever needs the Bounty Requestor might have specified. Even in this case, their requirements may change, so it may be worth keeping up-to-date with the bounty request.  
 
-Currently, the bounty fulfillment process might flow as follows…
+Currently, the bounty fulfillment process may flow as follows…
 
 ![Bounty Fulfillment Process](./img/Bounty_Fulfillment_Process.png)
