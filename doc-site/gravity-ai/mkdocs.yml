@@ -38,9 +38,11 @@ plugins:
 extra:
   supported:
     debian:
-      version_name: buster slim
+      version_name: Buster Slim
     r:
       version_number: 0.9.3
+    ubuntu:
+      version_name: Focal
   expiration:
     license:
       duration_in_days: 30
