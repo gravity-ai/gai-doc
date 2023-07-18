@@ -11,7 +11,7 @@
     * gravityAI does not (currently) support the M1 chipset that can be found in many MACs nowadays.  If you attempt to run a gravityAI container on such platforms, they will not work.
     * gravityAI prides itself on being a marketplace that consists of high-quality, well documented models. 
         * Coding a working model is, very much, the first step of getting the model approved and listed on the marketplace.  Clearly listing use cases for your model, how/when to use it, what the performance expectations are, how much memory the buyer should allocate to docker memory, etc. can go a long way in helping your model getting approved (also in selling it as well).
-    * Please don’t use libraries that have copy-left licenses.  Use of these licenses might lead to your model not being approved. 
+    * Please don’t use libraries that have [copy-left licenses](./glossary.md#Copy-left Licenses).  Use of these licenses may lead to your model not being approved. 
     * Handling multi-file input/output is a bit tricky at this time.  While possible, have single file input/output is preferred.
     * Currently, our supported languages vary depending on whether you're using **Python CPU Only or Python GPU**. If you're using Python CPU Only, we support Python 3.5 - 3.10 and R 3.6, and if you're using Python GPU, we support Python 3.8-3.10.
 
@@ -210,7 +210,7 @@ Each Test object has the following fields:
     * Once you choose your zipped model, just click “Begin Upload” this will upload your model.
         * A progress bar will appear, indicating progress of your upload.
         * NOTE: your model doesn't need to be a .zip — it could be a .tar, a GZip, etc.
-        * NOTE: it might take a while for your model to load, especially if your model is large (consisting of > 1GB).  Please be patient and wait for the upload to complete.
+        * NOTE: it may take a while for your model to load, especially if your model is large (consisting of > 1GB).  Please be patient and wait for the upload to complete.
 
 
 ![Model Upload Process](./img/Model_Upload_Process.png)
