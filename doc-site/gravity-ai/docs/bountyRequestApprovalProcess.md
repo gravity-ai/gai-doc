@@ -4,6 +4,6 @@ gravityAI offers a powerful means for companies and individuals to request AI So
 
 If your request is not well documented, not only will people not submit models to your request, but those few models that make it might be far off from your desired goal.  Providing test data, or at least the schema of data, will help sellers tremendously as they work to fulfill your needs.
 
-In general, the bounty request approval flow might proceed as follow
+In general, the bounty request approval flow might proceed as follows:
 
 ![Bounty Request Approval Process](./img/Bounty_Request_Approval_Process.png)

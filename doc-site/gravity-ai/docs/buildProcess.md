@@ -2,7 +2,7 @@
 
 ## Prior to the Build
 
-### What to you know prior to creating your project
+### What to know prior to creating your project
 
 -  What to know prior to creating your project:
 
