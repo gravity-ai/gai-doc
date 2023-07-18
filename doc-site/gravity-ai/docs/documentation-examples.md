@@ -1,5 +1,6 @@
 # Model Documentation Examples
 
+Below, we will be creating example documentation for a project using Google's BERT language model.
 
 ## General Model Overview <a id="model-overview"></a>
 
@@ -38,10 +39,10 @@ Searching a document repository for invoices from a specific supplier.
 The model can be asked to identify documents which have a specified supplier name located in the expected locations in the document, such as document headers, address fields and sign-off signatures.
 
 #### Title:
-Prioritising incoming application forms based on criteria contained within the
+Prioritizing incoming application forms based on criteria contained within the
 documents.
 #### Description:
-The model can be used to select and order documents based on content which indicates priority. For example, documents containing indications of being “urgent” or a “final demand” can be prioritised above those indicating a “reminder”.
+The model can be used to select and order documents based on content which indicates priority. For example, documents containing indications of being “urgent” or a “final demand” can be Prioritized above those indicating a “reminder”.
 
 ### Business Fit <a id="business-fit"></a>
 
@@ -187,7 +188,7 @@ A few minutes
 ## Risk & Compliance <a id="risk-compliance"></a>
 
 ### Blackbox Model <a id="blackbox-model"></a>
-This is a blackbox model.
+This is a **blackbox model**. Explained simply, a blackbox model is is a model which we don't have the code for.  E.g. it's a "black box" that just does stuff for us (inputs in, outputs out).
 
 ### Privacy Risks <a id="privacy-risks"></a>
 

@@ -3,7 +3,7 @@
 
 
 **A.** Select your version of Python <br/>
-- Currently gravityAI only supports versions 3.8 and 2.7.17 <br/>
+- Currently gravityAI supports 3.5-3.10 for CPU Only and 3.8-3.10 for GPU. <br/>
 **B.** Select your entrypoint script <br/>
 **C.** Select your requirements.txt file <br/>
 **D.** Specify your command line arguments <br/>

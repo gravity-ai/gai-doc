@@ -1,8 +1,7 @@
 # Overview
-In order to submit on-demand jobs, you will need to interact with the job-api.  
-For your convenience, there's a swagger doc that you can find <a href="https://on-demand.gravity-ai.com/swagger/index.html" target="_blank"><u>here</u></a>.
+In order to submit on-demand [jobs](./glossary.md#Jobs), you will need to interact with the job-api. For your convenience, there's a swagger doc that you can find <a href="https://on-demand.gravity-ai.com/swagger/index.html" target="_blank"><u>here</u></a>.
 <br/>
-<br/>
+<hr/>
 <hr/>
 Note: You must provide your api key prior to making these calls. See [<u>"Submitting On-Demand Jobs"</u>](submittingJobs.md) for more details.
 <hr/>

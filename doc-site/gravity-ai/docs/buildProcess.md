@@ -2,40 +2,41 @@
 
 ## Prior to the Build
 
-### What to you know prior to creating your project
+### What to know prior to creating your project
 
 -  What to know prior to creating your project:
 
-    * If your code works locally, it doesn’t necessarily  mean that it will work when it gets put into a docker container.  You must create your project in such a way that it must be able to run on a linux-based container. This is currently a container derived from debian buster-slim, but we might migrate to an ubuntu based container eventually.
+    * If your code works locally, it doesn’t necessarily  mean that it will work when it gets put into a docker container.  You must create your project in such a way that it must be able to run on a linux-based container. If you're using **Python CPU**, this is a container derived from **Debian Buster Slim**, and if you're using **Python GPU**, this is a container derived from **Ubuntu Focal**.
         * When in doubt, feel free to download one of the many free models and use that docker container as your dev environment.  E.g. copy your model code over to the container, install your dependencies, and attempt to run it at the CLI.  Does it work as expected?
-    * gravityAI does not (currently) support the M1 chipset that can be found in many MACs nowadays.  If you attempt to run a gravityAI container on such platforms, they will not work.
+    * **gravityAI does not (currently) support the M1 and M2 chipsets** that can be found in many MACs nowadays.  If you attempt to run a gravityAI container on such platforms, they will not work.
     * gravityAI prides itself on being a marketplace that consists of high-quality, well documented models. 
         * Coding a working model is, very much, the first step of getting the model approved and listed on the marketplace.  Clearly listing use cases for your model, how/when to use it, what the performance expectations are, how much memory the buyer should allocate to docker memory, etc. can go a long way in helping your model getting approved (also in selling it as well).
-    * Please don’t use libraries that have copy-left licenses.  Use of these licenses might lead to your model not being approved. 
+    * Please don’t use libraries that have <a href="https://www.gnu.org/licenses/copyleft.en.html" target="_blank">Copy-left Licenses</a>.  Use of these licenses may lead to your model not being approved. 
     * Handling multi-file input/output is a bit tricky at this time.  While possible, have single file input/output is preferred.
-    * Currently, our supported languages are Python 3.5 - 3.10, Python 2.7 (recommend not using), and R 3.6  
+    * Currently, our supported languages vary depending on whether you're using **Python CPU Only or Python GPU**. If you're using Python CPU Only, we support Python 3.5 - 3.10 and R 3.6, and if you're using Python GPU, we support Python 3.8-3.10.
 
 -  Coding your Hello Universe Project
 
-    * We recommend following the tutorial created by Youtuber Code With Ania, you can view [here](https://youtu.be/i6qL3NqFjs4)
+    * We recommend following the tutorial created by Youtuber Code With Ania, you can view [here](https://youtu.be/i6qL3NqFjs4).
     * Regardless of how you create your model...
         * you must take care to carefully list your dependencies in a **requirements.txt** file or using **renv**
-        * you must have a single entry script that takes into account, at minimum, a path to an input file and a path to an output file. (see Input/Output Handling)
+        * you must have a single entry script that takes into account, at minimum, a path to an input file and a path to an output file. For more info check out [Input/Output Handling](./input-output.md).
     * You may or may not decide to include a gravityai-build.json to allow for prefilled build settings or tests that can occur during build processing.
 
 
 ## Build Configuration File
 
-You can control additional build options for your project by including a "gravityai-build.json" file in your uploaded archive. This file should be in standard json format. Be sure it's located at the root level of the project:<br/>
+You can control additional build options for your project by including a "gravityai-build.json" file in your uploaded [archive](./glossary.md#Archive). This file should be in standard json format. Be sure it's located at the root level of the project:<br/>
 ```
 Project_to_Upload/
    |--> src/
    |--> gravityai-build.json
 ```
 
-### Example File
+<a id="example-build-config"></a>
+### Example Build Configuration: gravityai-build.json
 
-The following example installs tesseract as a dependency. It also offers an input file along with expected output to use as a test at build time.
+The following example installs tesseract and support libraries as ```SystemPackages```. This file may contain one to many tests, each of which containing a ```RelativeInputPath``` field for an input file as well as a ```RelativeReferencePath``` field for expected output to use as a test at build time.
 
 ```
 {
@@ -67,7 +68,7 @@ The following example installs tesseract as a dependency. It also offers an inpu
 
 ### SystemPackages Field
 
-This is an array of string values, each the name of a linux system package. At the moment, these packages should be available on the debian linux distribution. The base container image is debian {{supported.debian.version_name}}, so you may need to include additional packages not normally available on {{supported.debian.version_name}}.
+As [displayed above](#example-build-config), the ```SystemPackages``` field is an array of string values, each the name of a linux system package. If you're using **Python CPU**, the base container image is **Debian {{supported.debian.version_name}}**, and if you're using **Python GPU**, the base container image is **Ubuntu Focal** so you may need to include additional packages not normally available on {{supported.debian.version_name}} or {{supported.ubuntu.version_name}}. Below is an example of how to specify SystemPackages:
 
 ```
 "SystemPackages": [
@@ -78,7 +79,7 @@ This is an array of string values, each the name of a linux system package. At t
 
 ### Tests Field
 
-<b>Tests</b> is an array of Test Objects:
+<b>Tests</b> is an array of Test Objects, as displayed in the example below:
 
 ```
 "Tests": [
@@ -95,12 +96,12 @@ This is an array of string values, each the name of a linux system package. At t
 
 Each Test object has the following fields:
 
-- `RelativeInputPath` - A text string path to look at in the archive, relative to the directory location of this configuration file. The path should point to a test data input file that your algorithm will accept and run against at build time. If the output produced is structured data, then it is compared against the expected structure added to the build settings (ie. [Schema Paths](/schema-paths/)).
+- `RelativeInputPath` - A text string path to look at in the [archive](./glossary.md#Archive), relative to the directory location of this configuration file. The path should point to a test data input file that your algorithm will accept and run against at build time. If the output produced is structured data, then it is compared against the expected structure added to the build settings (ie. [Schema Paths](/schema-paths/)).
 
-- `RelativeReferencePath` - A test string path to look at in the archive, relative to the directory location of this configuration file. The path should point to the expected output that your algorithm will product, given the above input file. The results of your algorithm are compared against this file (a <i>byte-wise comparison</i>). If the result is identicle to this file, the test passes. Otherwise the build fails. This filed may be set to null or omitted altogether. This results in the output being verified that it exists, but it is not compared against a file.
+- `RelativeReferencePath` - A test string path to look at in the [archive](./glossary.md#Archive), relative to the directory location of this configuration file. The path should point to the expected output that your algorithm will product, given the above input file. The results of your algorithm are compared against this file (a <i>byte-wise comparison</i>). If the result is identical to this file, the test passes. Otherwise the build fails. This field may be set to null or omitted altogether. This results in the output being verified that it exists, but it is not compared against a file.
   <i>Note that the byte-wise comparison can fail due to character encoding and line-ending difference between linux and the operative system you produce the original file on.</i>
 
-### Example 2 File
+### Example Build Configuration Continued: gravityai-build.json
 
 The following example uses the gravityAI library and the Schema item to automatically populate the settings during the container upload process.
 
@@ -202,14 +203,14 @@ Each Test object has the following fields:
 
 ## Uploading your Model
 
-- All you need to do is compress (zip/tar/etc) your code.  You need not upload/package and dependencies.
+- All you need to do is compress (zip/tar/etc) your code.  There's no need to upload/package dependencies.
 - Once you choose your zipped model, just click “Begin Upload” this will upload your model.
 
-    * All you need to do is compress (zip/tar/etc) your code.  You need not upload/package and dependencies.
+    * All you need to do is compress (zip/tar/etc) your code.  You shouldn't upload/package dependencies.
     * Once you choose your zipped model, just click “Begin Upload” this will upload your model.
         * A progress bar will appear, indicating progress of your upload.
-        * NOTE: your model need not be a .zip.  It could be a .tar, a GZip, etc.
-        * NOTE: it might take a while for your model to load, especially if your model is large (consisting of > 1GB).  Please be patient and wait for the upload to complete.
+        * NOTE: your model doesn't need to be a .zip — it could be a .tar, a GZip, etc.
+        * NOTE: it may take a while for your model to load, especially if your model is large (consisting of > 1GB).  Please be patient and wait for the upload to complete.
 
 
 ![Model Upload Process](./img/Model_Upload_Process.png)

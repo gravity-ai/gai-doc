@@ -19,7 +19,7 @@ Language Options include Python and R.
 
 #### Preparing your model for upload.
 
-Models should be archived into a zip format (gzip, etc) archive. Your source code, data files, and anything else needed to distribute your model should be included in the zip file. Additionally, you can include a [Build Configuration File](build-config.md) to further customize your build settings.
+Models should be archived into a zip format (gzip, etc) [archive](./glossary.md#Archive). Your source code, data files, and anything else needed to distribute your model should be included in the zip file. Additionally, you can include a [Build Configuration File](build-config.md) to further customize your build settings.
 
 #### Python Library
 

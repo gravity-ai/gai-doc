@@ -14,7 +14,7 @@ Using the container API developers can:
 * Upload new license keys for the container
  
  
-The example API calls in the documentation use the Textblob Sentiment Analysis container run at URL http://localhost:7000
+**The example API calls in the documentation use the Textblob Sentiment Analysis container run at URL http://localhost:7000**
 
 <hr/>
 

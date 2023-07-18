@@ -101,4 +101,4 @@ You may chain together multiple vector notations to specify a multi-dimensional 
 
 ## Schema Path for CSV style data
 
-Paths for CSV data work the same way as JSON, except they do not have nested objects. Each path refers to a column name (as supplied in the first header line of the file). If the data file does not include a header, each field may be referred to by its index (i.e. `/1` `/2` etc). If a header occurs more than once in the file, it is considered to be an array, with the left-most filed starting at position 0.
+Paths for CSV data work the same way as JSON, except they do not have nested objects. Each path refers to a column name (as supplied in the first header line of the file). If the data file does not include a header, each field may be referred to by its index (i.e. `/1` `/2` etc). If a header occurs more than once in the file, it is considered to be an array, with the left-most field starting at position 0.
