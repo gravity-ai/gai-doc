@@ -10,6 +10,10 @@ Many models in the marketplace require credits to purchase. Once you've purchase
 
 Upload and run your own model starting at $0.0001 per second (2GB of RAM). View individual pre-trained models for pricing details. Host your own model and run on GPU (coming soon).
 
+## Project Astronaut (AI App Builder)
+
+There's four steps to building an AI App on gravityAI. Step 1. Share your idea with us. Step 2. We'll retrain models for you to turn your idea into a real product. Step 3. Decide how much your unique creation is worth and put it live on your new website. Step 4. Earn 50% of all revenue generated. 
+
 ## Licenses
 
 When you purchase a model, you gain the ability to download the model as a docker container. You can also generate a license key for the container. These keys must be uploaded to the container before the container will process data. Keys expire every {{expiration.license.duration_in_days}} days, and may be generated and renewed as long as you maintain your subscription to the model.
